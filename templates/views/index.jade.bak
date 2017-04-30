@@ -1,0 +1,17 @@
+extends ../layouts/default
+
+block content
+	.container: .jumbotron
+		h1 Welcome
+		p This is the homepage for the Kalamazoo College CS Club!
+		p Meetings are at<b> 3:00PM</b> at<b> Olds-Upton 310</b>. We currently host competitive programming teams, website development, and support for personal projects.
+
+		p If it looks a little rough, that's because the page is under construction
+		hr
+		if user && user.canAccessKeystone
+			p
+				a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
+		else
+			p
+				a(href='/keystone/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
+				|  to use the Admin UI.
